@@ -58,6 +58,8 @@ These steps describe the research approach. The exported V2 workflow is a develo
 
 ## Automation workflow
 
+**[Download the sanitized n8n workflow JSON](workflows/thesis-rfm-kmeans-v2.json)**
+
 The supplied n8n V2 prototype contains 40 nodes. Its design includes:
 
 - A Gmail trigger and request parser for a date range and product category.
@@ -67,7 +69,7 @@ The supplied n8n V2 prototype contains 40 nodes. Its design includes:
 - OpenAI agents and structured output parsers for report drafting.
 - HTML report assembly, APITemplate.io PDF generation, and a Gmail reply step.
 
-This public repository currently contains project documentation. The workflow export, connected Sheets, API credentials, raw dataset, and generated reports are not included.
+The public workflow export retains the original analytical code, prompts, and connections. Credential references, account-specific Google Sheets locations, sender addresses, execution metadata, and pinned data have been removed. The template is inactive and requires your own configuration before use. Connected Sheets, API credentials, the raw dataset, and generated reports are not included.
 
 ## Tools and technologies
 
@@ -83,7 +85,7 @@ This public repository currently contains project documentation. The workflow ex
 ## Setup
 
 1. Download the dataset from the Kaggle link above and import it into a Google Sheet, retaining its original column names.
-2. If you have access to the V2 workflow export, import it into n8n.
+2. Import `workflows/thesis-rfm-kmeans-v2.json` into n8n.
 3. Connect your own Gmail, Google Sheets, OpenAI, and APITemplate.io credentials.
 4. Select your dataset spreadsheet in **Pull from Dataset**. Configure a report sheet for the other Google Sheets nodes and review their column mappings.
 5. Create the report-sheet columns: `Report Name`, `Chapter 1` through `Chapter 5`, and `Chapter 1 Content` through `Chapter 5 Content`.
@@ -115,6 +117,7 @@ The repository preserves the supplied V2 prototype rather than presenting it as 
 | File | Purpose |
 | --- | --- |
 | `README.md` | Project overview, dataset citation, setup, and implementation notes |
+| `workflows/thesis-rfm-kmeans-v2.json` | Sanitized n8n V2 workflow export |
 | `.gitignore` | Excludes local credentials, raw data, and generated outputs |
 
 ## Research reference
